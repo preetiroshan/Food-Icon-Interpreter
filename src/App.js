@@ -32,6 +32,13 @@ export default function App() {
   };
   return (
     <div className="App">
+      <h1>Food Icon Interpreter</h1>
+      <h3>
+        Enter an emoji or select one to know what it means
+        <span role="img" aria-label="emoji">
+          😃
+        </span>
+      </h3>
       <input
         id="inputBox"
         name="foodInput"
@@ -40,6 +47,7 @@ export default function App() {
         onChange={handleChange}
         onFocus={() => setInterpretation("")}
       />
+      <br />
       <button className="m-1" onClick={handleSubmit}>
         Interpret
       </button>
@@ -47,6 +55,8 @@ export default function App() {
       <div className="icon-section">
         {foodList.map((item, key) => (
           <span
+            role="img"
+            aria-label="emoji"
             key={key}
             onClick={() => handleIconChange(item)}
             className={
